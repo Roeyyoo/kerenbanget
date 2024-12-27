@@ -42,20 +42,3 @@ class MyUser {
     return 'MyUser: $userId, $email, $name, $hasActiveCart';
   }
 }
-//required itu memastikan bahwa parameter (input) harus diberikan saat 
-//membuat objek dari class 
-//Biasanya dipakai di constructor (fungsi) untuk mendeklarasikan bahwa nilai untuk parameter tersebut tidak boleh kosong.
-
-//this itu nunjukin 'ini', Dalam konteks constructor
-// 'this' digunakan buat mengakses parameter yang diterima oleh constructor dan menyamakan nama parameter tersebut dengan variabel instance (atribut kelas).
-
-//-------------------------
-//MyUserEntity itu berfungsi buat transform data dari class MyUser yang nanti bakal di send ke json map (database)
-//MyUser itu buat actual act nya. Buat komprehensif aja
-
-//gini prosesnya
-//input dari class MyUser
-//to method: MyUserEntity bakal transform class dari MyUser ke json map thats going to database
-//from method: from Entity itu ngambil json map dari database dan transform json within MyUserEntity objek  dan MyUserEntity transform datanya sendiri ke MyUser Class
-//Make sense
-//---------------------
