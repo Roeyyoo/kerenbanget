@@ -30,10 +30,6 @@ class FirebaseUserRepo implements UserRepository {
     });
   }
 //it's ging to change everytime the app detect new user being connected
-//stream itu jalan terus, beda sama future. Jadi kalo kita buka app, stream-nya itu jalan terus ngecekin user either sign in/sign out. Kalo future cuma sekali check
-//* di async itu buat yield, kalo async itu buat future
-//user collection dari line 12 itu
-//abis itu diakses pake .doc, abis itu didapetin pake .get, terus
 
   @override
   Future<void> signIn(String email, String password) async {
@@ -45,8 +41,8 @@ class FirebaseUserRepo implements UserRepository {
       rethrow;
     }
   }
-  //jadi wrap method di try and cacth
-  //pake rethrow biar buang eror, block will cacth the eror and send failure stage to app
+  //wrap method try and cacth
+  
 
   @override
   Future<MyUser> signUp(MyUser myUser, String password) async {
@@ -62,8 +58,6 @@ class FirebaseUserRepo implements UserRepository {
     }
   }
 
-//so when the user click sign up, it gonna comes to line 54. then firebaseauth gonna create user email and pasword
-//line 57: then it gonna let the user set userId to the one that was provided by firebaseauth
 //return myUser becs myUser changed within the method bcs the id now is the one that firebaseauth gave
   @override
   Future<void> logOut() async {
@@ -82,21 +76,3 @@ class FirebaseUserRepo implements UserRepository {
     }
   }
 }
-//eror karena kita harus import packagesnya dulu
-//jadi ke yaml file dan pake firebase_auth sama cloud_firestore
-//terus import FirebaseAuth sama FirebaseFirestore, shortcut: ctrl+.
-
-//FirebaseUserrepo eror karena implements UserRepository class yg ada di user_repo.dart, dan 
-// di user_repo.dart ga ada kelasnya. Jadi create override ajaa
-// implenet method nanti, urusin MyUser class dulu di user_repo
-//--------------------------
-//user repo kelar, entity kelar, ini masih eror
-//hapus aja dari bawah sampai override dan bikin lagi (FirebaseUserRepo)
-//--------------------------
-//kalo dah kelar lanjur user_repo.dart dan export semua (entities, models, user_repo, firebaseuserrepo)
-
-
-
-//-----------------------------------------------------//--------------------------------
-// lanjut set-set gatau ngapain
-//urutin dari stream, Sign In, Sign Up, Log Out, setUserData
